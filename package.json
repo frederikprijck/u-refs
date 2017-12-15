@@ -1,7 +1,7 @@
 {
   "name": "u-refs",
   "version": "0.0.1",
-  "description": "",
+  "description": "U-Refs allows to update dependencies in package.jspn based on the current installed version.",
   "main": "index.js",
   "scripts": {
     "build": "tsc",

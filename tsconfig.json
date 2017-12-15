@@ -1,0 +1,21 @@
+{
+  "compileOnSave": false,
+  "include": [
+      "src/**/*.ts"
+  ],
+  "compilerOptions": {
+    "outDir": "dist",
+    "sourceMap": true,
+    "declaration": true,
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "allowSyntheticDefaultImports": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "target": "es6",
+    "lib": [
+      "es2016",
+      "dom"
+    ]
+  }
+}

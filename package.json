@@ -1,0 +1,27 @@
+{
+  "name": "u-refs",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc",
+    "test": "u-refs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/frederikprijck/u-refs.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/frederikprijck/u-refs/issues"
+  },
+  "homepage": "https://github.com/frederikprijck/u-refs#readme",
+  "devDependencies": {
+    "@types/node": "^8.5.1",
+    "typescript": "^2.6.2"
+  },
+  "bin": {
+    "u-refs": "dist/index.js"
+  }
+}

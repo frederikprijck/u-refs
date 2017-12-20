@@ -14,10 +14,10 @@ export interface Dependency {
 }
 
 export interface DepDiffResult {
-  dependencies: Dependency[];
-  devDependencies: Dependency[];
-  peerDependencies: Dependency[];
-  optionalDependencies: Dependency[];
+  dependencies?: Dependency[];
+  devDependencies?: Dependency[];
+  peerDependencies?: Dependency[];
+  optionalDependencies?: Dependency[];
 }
 
 export class DepDiff {

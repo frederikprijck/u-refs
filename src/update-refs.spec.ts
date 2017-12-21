@@ -44,4 +44,32 @@ describe("UpdateRefs", function() {
     
     expect(result.dependencies.a).toEqual('^1.1.2');
   });
+
+  it("should not update version when using wildcards", function() {
+    const result = uRefs.update({
+      dependencies: {
+        'a': '1.x.x'
+      }
+    }, {
+      dependencies: [
+        { dependency: 'a', installed: '1.1.2', listed: '1.x.x' }
+      ]
+    });
+    
+    expect(result.dependencies.a).toEqual('1.x.x');
+  });
+
+  it("should update version when using wildcards", function() {
+    const result = uRefs.update({
+      dependencies: {
+        'a': '1.1.x'
+      }
+    }, {
+      dependencies: [
+        { dependency: 'a', installed: '1.2.2', listed: '1.1.x' }
+      ]
+    });
+    
+    expect(result.dependencies.a).toEqual('1.2.x');
+  });
 });

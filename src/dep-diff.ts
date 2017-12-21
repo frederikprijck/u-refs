@@ -1,4 +1,5 @@
 import { JsonLoader } from "./json-loader";
+import { version } from "punycode";
 
 export interface DepDiffOptions {
   dependencies?: boolean;
@@ -44,9 +45,11 @@ export class DepDiff {
   }
 
   private readVersions(dependencies: any[]) {
+    const regex = /^(\d|\^|\~)/g;
     return dependencies ? Object
       .keys(dependencies)
-      .map(key => ({ dependency: key, version: dependencies[key] })) : [];
+      .map(key => ({ dependency: key, version: dependencies[key] }))
+      .filter(dependency => dependency.version.match(regex)) : [];
   }
 
   private readInstalledVersion(dependency) {

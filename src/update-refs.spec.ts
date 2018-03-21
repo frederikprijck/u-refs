@@ -6,7 +6,8 @@ describe("UpdateRefs", function() {
   it("should update version", function() {
     const result = uRefs.update({
       dependencies: {
-        'a': '1.1.1'
+        'a': '1.1.1',
+        'b': '1.1.0'
       }
     }, {
       dependencies: [
@@ -15,6 +16,7 @@ describe("UpdateRefs", function() {
     });
     
     expect(result.dependencies.a).toEqual('1.1.2');
+    expect(result.dependencies.b).toEqual('1.1.0');
   });
 
   it("should update version without removing ~", function() {

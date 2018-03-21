@@ -12,7 +12,8 @@ export class UpdateRefs {
 
   private updateDependencies(pckg, dependencies: Dependency[] = [], selector: any) {
     const listedDependencies = selector(pckg);
-    return dependencies.map(dependency => {
+
+    const updatedDependencies = dependencies.map(dependency => {
       const version = listedDependencies[dependency.dependency];
       if (version.indexOf('x') > -1) {
         const installed = dependency.installed.split('');
@@ -31,5 +32,7 @@ export class UpdateRefs {
         };
       }
     }).reduce((acc, item) => Object.assign(acc || {}, item), {});
+
+    return Object.assign({}, listedDependencies, updatedDependencies);
   };
 }
